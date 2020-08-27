@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Lojistik Bilgi Kayıt Sistemi</title>
+<style>
+body{
+background: linear-gradient(rgba(255, 99, 71, 0.6),rgba(255, 99, 71, 0.6)) ;]
+}
+.container{
+display: flex;
+margin: 0 auto;
+width:960px;
+}
+.box1{
+width: 300px;
+}
+.box2{
+width: 300px;
+}
+.b{
+	padding: 5px;
+	background: #19B3D3;
+	text-decoration: none;
+	font-size: 15px;
+	font-weight: 600;
+	color:#fff;
+	transition: 0.5s;
+	transition-property: background;
+}
+.c{
+	padding: 5px;
+	background: #19B3D3;
+	text-decoration: none;
+	font-size: 15px;
+	font-weight: 600;
+	color:#fff;
+	transition: 0.5s;
+	transition-property: background;
+}
+</style>
+</head>
+<body>
+<div class="container">
+	<div class="box1">
+	<form action="/verileriAl" method="POST">
+		<h1>Taşıması Gerçekleşecek Ürün Bilgileri</h1></br>
+		<label>Ürün Adını Giriniz:</label></br>
+		<input name="urAd" type="text" placeholder="Ürün Adı"/></br>
+		<label>Taşınırın Barkod Numarası:</label></br>
+		<input name="urNum" type="text" placeholder="Ürün Barkod Numarası"></br>
+		<label>Taşıma Ücretini Giriniz:</label></br>
+		<input name=tasUcr type="text" placeholder="Ürün Ücreti"></br>
+		<label>Varış Noktası(Şehir'i Giriniz):</label></br>
+		<input name="varNok" type="text" placeholder="Varış Noktası"></br>
+		<label>Nakil Yolu(Araç):</label></br>
+		<select name="arac"></br>
+			<option>Kamyon</option>
+			<option>Yük Gemisi</option>
+			<option>Hava Yolu</option>
+			<option>Tren</option>
+			<option>Tır</option>
+			<option>Kargo Servisi</option>
+
+		</select>
+		<input name="dogumTarih" type="date"></br>
+		<input class="b"  type="button" value="Seçili Ürünleri Temizle">
+		<input class="c" type="submit" value="Kaydedip Veri Tabanına Taşı"></br>
+
+	</form>
+	</div>
+	<div class="box2">
+	<h1>Kayıtlı Bilgiler</h1>
+	<label>Ürün Adı:</label>
+	<label>{{urAd}}</label></br>
+	<label>Barkod Numarası:</label>
+	<label>{{urNum}}</label></br>
+	<label>Taşıma Ücreti:</label>
+	<label>{{tasUcr}}</label></br>
+	<label>Varış Noktası:</label>
+	<label>{{varNok}}</label></br>
+	<label>Tercih Edilen Nakil Yolu:</label>
+	<label>{{arac}}</label></br>
+	<label>Tarih:</label>
+	<label>{{dogumTarih}}</label></br>
+	<input type="button" value="Bir Önceki Kayıt">
+	<input type="button" value="Bir Sonraki Kayıt">
+	</div>
+</div>
+</body>
+</html>
